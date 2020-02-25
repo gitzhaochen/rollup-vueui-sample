@@ -1,14 +1,9 @@
 const config = {
   presets: [
     [
-      "@babel/env",
+      '@babel/env',
       {
-        targets: {
-          // edge: '17',
-          // firefox: '60',
-          chrome: "44"
-        },
-        useBuiltIns: "usage",
+        useBuiltIns: 'usage',
         corejs: 3,
         modules: false
       }
@@ -16,7 +11,7 @@ const config = {
   ],
   plugins: [
     [
-      "@babel/plugin-transform-runtime",
+      '@babel/plugin-transform-runtime',
       {
         helpers: true,
         corejs: 3,
@@ -25,5 +20,5 @@ const config = {
       }
     ]
   ]
-};
-module.exports = config;
+}
+module.exports = config

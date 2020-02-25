@@ -1,26 +1,45 @@
 {
-  "name": "rollup-test",
+  "name": "rollup-vueui-sample",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "一个尝试拿rollup开发vue组件库的项目",
+  "module": "dist/esm/index.js",
+  "main": "dist/umd/index.js",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "rollup": "rollup -c"
+    "dev": "cross-env NODE_ENV=development rollup -c scripts/rollup.config.esm.js -w",
+    "build": "npm run build:browser && npm run build:esm && npm run build:umd",
+    "build:esm": "rm -rf dist/esm/ && rollup -c scripts/rollup.config.esm.js",
+    "build:umd": "rollup -c scripts/rollup.config.umd.js",
+    "build:browser": "rollup -c scripts/rollup.config.browser.js"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@babel/runtime": "^7.8.4",
-    "@babel/runtime-corejs3": "^7.8.4",
-    "core-js": "^3.6.4",
-    "the-answer": "^1.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "lodash": "^4.17.15",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
     "@babel/core": "^7.6.4",
     "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/preset-env": "^7.6.3"
+    "@babel/preset-env": "^7.6.3",
+    "@babel/runtime": "^7.8.4",
+    "@babel/runtime-corejs3": "^7.8.4",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-json": "^4.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "core-js": "^3.6.4",
+    "cross-env": "^7.0.0",
+    "rollup": "^1.31.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-postcss": "^2.1.1",
+    "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-vue": "^5.1.6",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "peerDependencies": {
+    "@babel/runtime-corejs3": "^7.8.4"
   }
 }
