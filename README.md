@@ -8,13 +8,13 @@
 
 ## TODO
 
-1. 为什么`esm`的`vue`组件库没有被`webpack tree shaking` 掉？？？
+1. 以下使用方法中，为什么`esm`的`vue`组件库没有被`webpack tree shaking` 掉？？？
 
 ```js
 import { componentA } from 'vueui' //vueui 入口文件 module 是esm格式
 ```
 
-2. 单独打出来的 css 包，为啥内容都一样？？
+2. 如果用 `rollup-plugin-postcss` 按照 `component` 路径单独打出来的 `css` 包，为啥内容都一样？？如果用 `rollup-plugin-vue` 只能内联 `css` 或者打包出一个总的 css 文件，不能拆分。
 
 ## Features
 

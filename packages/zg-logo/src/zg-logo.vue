@@ -1,5 +1,5 @@
 <template>
-  <div class="zg-logo">这是一个zglogo组件</div>
+  <div class="zg-logo">这是一个zglogo组件3333</div>
 </template>
 <script>
 export default {
@@ -13,5 +13,6 @@ export default {
 .zg-logo{
   text-align:center;
   color:red;
+  transform translate3d(-50%,0,0)
 }
 </style>

@@ -1,8 +1,6 @@
-import fs from 'fs'
 import path from 'path'
 import base from './rollup.config.base.js'
 import pkg from '../package.json'
-import postcss from 'rollup-plugin-postcss'
 
 import { getDirsByPath } from './utils'
 

@@ -1,5 +1,5 @@
 import zgLogo from './zg-logo/index.js'
-import zgInput from './zg-input/src/zg-input.vue'
+import zgInput from './zg-input/index.js'
 import zgNotify from './zg-notify/index.js'
 
 const components = [zgLogo, zgInput]
@@ -20,5 +20,5 @@ AllenUi.install = install
 
 // 输出default变量，用于全量引入
 export default AllenUi
-// 输出各个组件，用于按需引入
-// export { zgLogo, zgInput }
+//TODO:输出各个组件，计划用于按需引入 却无法实现
+// export { zgLogo, zgInput,zgNotify }

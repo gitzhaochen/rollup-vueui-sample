@@ -11,11 +11,10 @@
     "dist"
   ],
   "scripts": {
-    "dev": "cross-env NODE_ENV=development rollup -c scripts/rollup.config.esm.js -w",
-    "build": "npm run build:browser && npm run build:esm && npm run build:umd",
+    "dev": "rm -rf dist/ && cross-env NODE_ENV=development rollup -c scripts/rollup.config.base.js -w",
+    "build": "npm run build:esm && npm run build:umd",
     "build:esm": "rm -rf dist/esm/ && rollup -c scripts/rollup.config.esm.js",
-    "build:umd": "rollup -c scripts/rollup.config.umd.js",
-    "build:browser": "rollup -c scripts/rollup.config.browser.js"
+    "build:umd": "rm -rf dist/umd/ && rollup -c scripts/rollup.config.umd.js"
   },
   "author": "",
   "license": "ISC",
@@ -27,13 +26,12 @@
     "@babel/runtime": "^7.8.4",
     "@babel/runtime-corejs3": "^7.8.4",
     "@rollup/plugin-commonjs": "^11.0.2",
-    "@rollup/plugin-json": "^4.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
+    "autoprefixer": "^9.7.4",
     "core-js": "^3.6.4",
     "cross-env": "^7.0.0",
     "rollup": "^1.31.1",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-postcss": "^2.1.1",
     "rollup-plugin-terser": "^5.2.0",
     "rollup-plugin-vue": "^5.1.6",
     "vue": "^2.6.11",
